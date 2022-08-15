@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": "BSZ6wzzzkIjasfbk",
+      "name": "Shabad",
+      "password": "1234",
+      "role": "admin",
+      "email": "shabadlamba@gmail.com"
+    },
+    {
+      "id": "BSZ6wzzzkIjaxzvv",
+      "name": "Sorin",
+      "password": "qwerty",
+      "role": "admin",
+      "email": "1234@gmail.com"
+    }
+  ]
+}

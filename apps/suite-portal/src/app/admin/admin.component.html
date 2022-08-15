@@ -1,0 +1,48 @@
+<sp-grid-container
+  *ngIf="!currentUser"
+  [title]="'Admin Login'"
+  [cols]="'1'"
+  [rowHeight]="'3:1'"
+>
+  <form content class="login-form" [formGroup]="adminLoginForm">
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input matInput placeholder="Name" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input
+        matInput
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </mat-form-field>
+    <div style="color: red;" *ngIf="loginFailed">
+      Invalid credentials, please check your email or password
+    </div>
+    <button
+      [disabled]="adminLoginForm.invalid"
+      mat-raised-button
+      color="accent"
+      (click)="submitForm(adminLoginForm.value)"
+    >
+      Login
+    </button>
+  </form>
+</sp-grid-container>
+<div *ngIf="currentUser">
+  <ng-container *ngIf="listOfMaintenanceRequest.length > 0">
+    <sp-admin-dashboard
+      style="display: flex; justify-content: center;"
+      *ngIf="listOfMaintenanceRequest.length > 0"
+      [_listOfMaintenanceRequest]="listOfMaintenanceRequest"
+    ></sp-admin-dashboard>
+  </ng-container>
+  <div *ngIf="listOfMaintenanceRequest.length === 0">
+    ...loading data <!-- spinner component will go here -->
+  </div>
+</div>

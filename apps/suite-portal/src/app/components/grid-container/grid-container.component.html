@@ -1,0 +1,14 @@
+<mat-grid-list [cols]="col" [rowHeight]="rowHeight">
+  <mat-grid-tile>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          {{ title }}
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content style="min-width: 350px;">
+        <ng-content select="[content]"></ng-content>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

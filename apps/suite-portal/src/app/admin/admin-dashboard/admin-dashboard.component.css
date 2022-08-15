@@ -1,0 +1,29 @@
+td {
+  font-size: 16px;
+  padding: 10px 10px 10px 20px !important;
+}
+
+td:first-child {
+  padding-left: 24px !important;
+}
+
+td:last-child {
+  padding-right: 24px !important;
+}
+th {
+  padding: 20px !important;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: min-content;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+}

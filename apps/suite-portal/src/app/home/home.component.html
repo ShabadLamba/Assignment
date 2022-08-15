@@ -1,0 +1,49 @@
+<sp-grid-container [title]="'Maintenance Request Form'" [rowHeight]="'2:1'" col="'1'">
+  <form content class="maint-form" [formGroup]="maintenanceRequestForm">
+    <mat-form-field>
+      <mat-label>Apartment Unit #</mat-label>
+      <input matInput type="text" formControlName="unitNumber" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Requester Name</mat-label>
+      <input matInput type="text" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Requester Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Service Type</mat-label>
+      <mat-select formControlName="serviceType">
+        <mat-option
+          *ngFor="let serviceType of serviceTypes"
+          [value]="serviceType"
+        >
+          {{ serviceType }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Summary</mat-label>
+      <input matInput type="text" formControlName="summary" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Details</mat-label>
+      <textarea matInput formControlName="details"></textarea>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="accent"
+      [disabled]="maintenanceRequestForm.invalid"
+      (click)="submitForm(maintenanceRequestForm.value)"
+    >
+      Submit
+    </button>
+  </form>
+</sp-grid-container>
